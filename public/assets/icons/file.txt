@@ -1,0 +1,4 @@
+File Name	Use In
+pvp.png	Player vs Player
+ai.png	Player vs AI
+custom.png	Custom Mode

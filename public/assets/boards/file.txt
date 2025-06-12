@@ -1,0 +1,10 @@
+In public/assets/boards/, add:
+
+Filename	Theme Name
+classic.jpg	Classic
+neon.jpg	Neon
+wood.jpg	Wood
+dark.jpg	Dark
+dots.jpg	Dots
+
+(You can reuse ones you already generated earlier.)
