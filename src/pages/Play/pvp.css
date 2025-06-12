@@ -1,0 +1,236 @@
+/* ===== Global Layout ===== */
+.pvp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+/* ===== Game Board Layout ===== */
+.game-board.easy {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: 2px solid #0286df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 176, 252, 0.1);
+}
+
+
+.cell.win {
+  background: #d7ffd7;
+  animation: cell-glow 1s ease-in-out infinite;
+}
+
+
+.X, .O {
+  font-weight: bold;
+}
+
+/* ===== Scoreboard ===== */
+.scoreboard-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #ecf9ff;
+  text-align: center;
+}
+
+.scoreboard-title .active-player {
+  color: #00b0fc;
+  text-shadow: 0 0 5px #76d5fe;
+}
+
+.score-values {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+/* ===== Timer ===== */
+.timer {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+   display: flex;
+  justify-content: center;
+  color: #b1e7ff;
+}
+
+/* ===== Popup ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(9, 21, 43, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: linear-gradient(to right, #035cc2, #0286df);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: #ecf9ff;
+  box-shadow: 0 0 25px rgba(0, 176, 252, 0.3);
+}
+
+.popup-box h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.popup-box button {
+  background: #00b0fc;
+  color: #09152b;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-box button:hover {
+  background: #76d5fe;
+}
+
+/* ===== Action Buttons ===== */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding-bottom: 100px;
+}
+
+.action-buttons button {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #00b0fc, #76d5fe);
+  color: #09152b;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 176, 252, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 480px) {
+  .game-board.easy {
+    grid-template-columns: repeat(3, 65px);
+  }
+
+  .cell {
+    width: 65px;
+    height: 65px;
+    font-size: 1.8rem;
+  }
+
+  .score-values {
+    gap: 3rem;
+  }
+
+  .popup-box {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .popup-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .popup-box button {
+    width: 100%;
+  }
+}
+
+
+
+/* === Dynamic Themes === */
+.theme-classic { background: #fff; }
+.theme-neon { background: #000; }
+.theme-wood { background: #d2b48c; }
+.theme-chalk { background: #f1f1f1; }
+.theme-dots {
+  background: radial-gradient(#aaa 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.theme-paper {
+  background-image: linear-gradient(#ccc 1px, transparent 1px),
+                    linear-gradient(90deg, #ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #fff;
+}
+
+/* === XO Styles === */
+.xo-classic {
+  font-family: sans-serif;
+  color: #333;
+}
+.xo-neon {
+  font-family: 'Orbitron', sans-serif;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+.xo-chalk {
+  font-family: 'Patrick Hand', cursive;
+  color: #444;
+  text-shadow: 1px 1px 0 #fff;
+}
+.xo-wood {
+  color: #3e1f00;
+}
+.xo-dots {
+  font-family: monospace;
+  color: #222;
+}
+.xo-paper {
+  font-family: 'Comic Sans MS', cursive;
+  color: #000;
+}
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}

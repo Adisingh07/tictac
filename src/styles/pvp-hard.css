@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Patrick+Hand&display=swap');
+
+.pvp-container {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.scoreboard-title, .score-values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.scoreboard-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.scoreboard-title .vs {
+  color: #999;
+}
+.score-values {
+  gap: 50px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.active-player {
+  font-weight: bold;
+  color: #4285f4;
+}
+
+.timer {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.game-board.hard {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(5, 60px);
+  gap: 5px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cell.win {
+  background: #d7ffd7;
+  animation: cell-glow 1s ease-in-out infinite;
+}
+
+@keyframes cell-glow {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 10px 5px #4caf50; }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.popup-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  animation: popup-scale-fade 0.5s ease forwards;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.popup-box button {
+  background: #4caf50;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.popup-box button:hover {
+  background: #388e3c;
+}
+
+@keyframes popup-scale-fade {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.action-buttons button {
+  background: #999;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.action-buttons button:hover {
+  background: #666;
+}

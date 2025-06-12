@@ -1,0 +1,56 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: linear-gradient(90deg, #09152b, #082751, #063977);
+  color: #ecf9ff;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 8px rgba(0, 176, 252, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #00b0fc, #ecf9ff);
+  -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mute-button {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ecf9ff;
+  transition: transform 0.2s ease;
+}
+
+.mute-button:hover {
+  transform: scale(1.2);
+  color: #76d5fe;
+}
+.main-header .logo img {
+  height: 32px;  /* Or whatever fits well */
+  margin-left: 8px;
+  vertical-align: middle;
+  padding:0 ;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 480px) {
+  
+
+  .main-header .logo {
+    font-size: 1.2rem;
+  }
+
+  .mute-button {
+    font-size: 1.2rem;
+  }
+}

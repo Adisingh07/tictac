@@ -1,0 +1,261 @@
+/* ========= GLOBAL ========= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #09152b, #082751, #063977, #035cc2, #0286df, #00b0fc, #76d5fe, #b1e7ff, #ecf9ff);
+  color: #ecf9ff;
+}
+
+/* ========= HEADINGS ========= */
+h2 {
+  text-align: center;
+  margin: 30px 0 20px;
+  font-size: 2rem;
+  background: linear-gradient(to right, #00b0fc, #ecf9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========= THEME PREVIEW GRID ========= */
+.theme-preview-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========= INDIVIDUAL THEME CARD ========= */
+.theme-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 176, 252, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.theme-preview h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #76d5fe;
+  text-transform: uppercase;
+}
+
+/* ========= SELECTED THEME GLOW ========= */
+.theme-preview.selected-theme {
+  border-color: #00b0fc;
+  box-shadow: 0 0 15px #00b0fc;
+  background: rgba(0, 176, 252, 0.08);
+}
+
+/* ========= 3x3 PREVIEW BOARD ========= */
+.theme-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1;
+  gap: 5px;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+/* ========= EACH CELL ========= */
+.theme-board .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #76d5fe;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ecf9ff;
+  overflow: hidden;
+}
+
+/* ========= XO TEXT BASE ========= */
+.xo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ========= XO PER THEME ========= */
+.xo-classic { color: #000; }
+.xo-neon { color: #00fff7; text-shadow: 0 0 6px #00f0ff, 0 0 10px #00f0ff; }
+.xo-chalk { color: #f0f0f0; text-shadow: 1px 1px 0 #222; font-family: 'Comic Sans MS', cursive; }
+.xo-wood { color: #3b2b1b; font-family: 'Georgia', serif; }
+.xo-dots { color: #0286df; text-shadow: 0 0 2px #00b0fc; }
+.xo-paper { color: #222; font-family: 'Courier New', monospace; }
+
+/* ========= BOARD STYLES PER THEME ========= */
+.theme-classic .cell {
+  background: #fff;
+  border: 1px solid #333;
+  color: #000;
+}
+
+.theme-neon .cell {
+  background: #000;
+  border: 2px solid #00f0ff;
+}
+
+.theme-chalk .cell {
+  background: #2e2e2e;
+  border: 2px dashed #ccc;
+}
+
+.theme-wood .cell {
+  background: #c49b6c;
+  border: 1px solid #a67c52;
+}
+
+.theme-dots .cell {
+  background-image: radial-gradient(#00b0fc 1px, transparent 0);
+  background-size: 10px 10px;
+  background-color: #f0faff;
+}
+
+.theme-paper .cell {
+  background-color: #fdf6e3;
+  border: 1px solid #ccc;
+}
+
+/* ========= SAVE BUTTON & POPUP ========= */
+.save {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  padding-bottom: 100px;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #00b0fc, #76d5fe);
+  color: #09152b;
+  border: none;
+  border-radius: 28px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 176, 252, 0.4);
+}
+
+.save-btn:hover:enabled {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 176, 252, 0.5);
+}
+
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.popup-confirm {
+  margin-top: 15px;
+  background: rgba(0, 176, 252, 0.1);
+  padding: 10px 20px;
+  border: 1px solid #00b0fc;
+  border-radius: 8px;
+  color: #76d5fe;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ========= RESPONSIVE ========= */
+@media screen and (max-width: 768px) {
+  .theme-preview-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .theme-preview h4 {
+    font-size: 0.9rem;
+  }
+
+  .theme-board .cell {
+    font-size: 1.2rem;
+  }
+
+  .save-btn {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .theme-board {
+    gap: 3px;
+  }
+
+  .theme-board .cell {
+    font-size: 1rem;
+  }
+
+  .theme-preview h4 {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ========= DESKTOP IMPROVEMENT ========= */
+
+@media screen and (min-width: 1024px) {
+  /* Shared board wrapper */
+.theme-preview-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========= INDIVIDUAL THEME CARD ========= */
+.theme-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 176, 252, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.theme-board {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 4px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+  
+
+  .theme-board .cell {
+    font-size: 1.4rem;
+  }
+
+  .theme-preview h4 {
+    font-size: 1rem;
+  }
+}
+

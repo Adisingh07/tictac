@@ -1,0 +1,103 @@
+/* General Container */
+.settings-container {
+  padding: 40px 20px;
+  padding-bottom: 100px;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(9, 21, 43, 0.85); /* Oxford Blue with transparency */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 176, 252, 0.3);
+  color: #ecf9ff;
+  backdrop-filter: blur(6px);
+}
+
+.settings-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #00b0fc, #76d5fe);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(0, 176, 252, 0.05);
+  border: 1px solid #0286df;
+  border-radius: 12px;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #76d5fe;
+}
+
+/* Settings Rows */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 10px;
+}
+
+.setting-row label {
+  flex: 1;
+  color: #b1e7ff;
+  font-size: 1rem;
+}
+
+.setting-row input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none; /* Standard property for compatibility */
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: #76d5fe;
+  outline: none;
+}
+.setting-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00b0fc;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 176, 252, 0.7);
+}
+
+.setting-row input[type="checkbox"] {
+  transform: scale(1.3);
+  accent-color: #00b0fc;
+}
+
+/* Legal Section */
+.legal a {
+  color: #76d5fe;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+
+.section.legal p button {
+  background: none;
+  border: none;
+  color: #2A63E8;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 0;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.section.legal p button:hover {
+  color: #1540C4;
+  text-decoration: underline;
+}

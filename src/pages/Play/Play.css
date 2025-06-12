@@ -1,0 +1,61 @@
+.pvp-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  font-size: 36px;
+  background: white;
+  border: 2px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell.win {
+  background-color: #e0ffe0;
+  animation: glow 1s infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 0 transparent; }
+  50% { box-shadow: 0 0 10px 5px #4caf50; }
+  100% { box-shadow: 0 0 0 transparent; }
+}
+
+.status-msg {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.action-buttons button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.active-player {
+  font-weight: bold;
+  color: #4285f4;
+}

@@ -1,0 +1,85 @@
+/* ==== Container Styling ==== */
+.setup-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: rgba(9, 21, 43, 0.95); /* Deep Oxford Blue */
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 176, 252, 0.3);
+  color: #ecf9ff;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #0286df;
+  text-align: center;
+}
+
+/* ==== Heading ==== */
+.setup-container h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #00b0fc, #ecf9ff);
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==== Labels and Input ==== */
+.setup-container label {
+  display: block;
+  font-weight: 500;
+  margin: 16px 0 8px;
+  text-align: left;
+}
+
+.setup-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #76d5fe;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  outline: none;
+}
+
+/* ==== Buttons ==== */
+.radio-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.start-btn {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #00b0fc, #76d5fe);
+  color: #09152b;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 176, 252, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 176, 252, 0.5);
+}
+
+/* ==== Responsive ==== */
+@media screen and (max-width: 500px) {
+  .setup-container {
+    padding: 20px 15px;
+    margin: 30px 10px;
+  }
+
+  .setup-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .start-btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
